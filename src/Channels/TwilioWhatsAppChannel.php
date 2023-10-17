@@ -29,7 +29,10 @@ class TwilioWhatsAppChannel {
 
     public function send($notifiable, Notification $notification) {
         try {
-            $to = $this->getTo($notifiable, $notification);
+            if (!$to = $notifiable->routeNotificationFor('twilioWhatsApp', $notification)) {
+                return;
+            }
+
             $message = $notification->toTwilioWhatsApp($notifiable);
 
             if (is_string($message)) {
@@ -48,25 +51,5 @@ class TwilioWhatsAppChannel {
 
             throw $exception;
         }
-    }
-
-    /**
-     * Get the address to send a notification to.
-     *
-     * @param mixed $notifiable
-     * @param Notification $notification
-     *
-     * @return mixed
-     * @throws CouldNotSendNotification
-     */
-    protected function getTo($notifiable, Notification $notification) {
-        if ($notifiable->routeNotificationFor('twilioWhatsApp', $notification)) {
-            return $notifiable->routeNotificationFor('twilioWhatsApp', $notification);
-        }
-        if (isset($notifiable->phone_number)) {
-            return $notifiable->phone_number;
-        }
-
-        throw CouldNotSendNotification::invalidReceiver();
     }
 }

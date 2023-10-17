@@ -21,11 +21,4 @@ class CouldNotSendNotification extends \Exception {
     public static function missingFrom(): self {
         return new static('Notification was not sent. Missing `from` number.');
     }
-
-    public static function invalidReceiver(): self {
-        return new static(
-            'The notifiable did not have a receiving phone number. Add a routeNotificationForTwilioWhatsApp
-            method or a phone_number attribute to your notifiable.'
-        );
-    }
 }
