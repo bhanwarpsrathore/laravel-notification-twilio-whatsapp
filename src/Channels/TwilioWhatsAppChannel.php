@@ -13,7 +13,7 @@ use TwilioWhatsApp\Exceptions\CouldNotSendNotification;
 class TwilioWhatsAppChannel {
 
     /**
-     * @var Twilio
+     * @var TwilioWhatsApp
      */
     protected $twilio;
 
