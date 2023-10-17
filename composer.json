@@ -1,0 +1,36 @@
+{
+    "name": "bhanwarpsrathore/laravel-notification-twilio-whatsapp",
+    "description": "Twilio WhatsApp notifications channel for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "twilio",
+        "whatsapp",
+        "laravel notification"
+    ],
+    "homepage": "https://github.com/bhanwarpsrathore/laravel-notification-twilio-whatsapp",
+    "authors": [
+        {
+            "name": "Pradeep Singh",
+            "email": "bhanwarpsrathore@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "twilio/sdk": "~6.0",
+        "illuminate/notifications": "^9.0 || ^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwilioWhatsApp\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TwilioWhatsApp\\TwilioWhatsAppProvider"
+            ]
+        }
+    }
+}
