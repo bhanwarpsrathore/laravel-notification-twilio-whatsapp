@@ -39,7 +39,7 @@ class TwilioWhatsApp {
         ];
 
         if ($from = $this->getFrom($message)) {
-            $params['from'] = $from;
+            $params['from'] = 'whatsapp:' . $from;
         }
 
         if (empty($from)) {
@@ -56,7 +56,7 @@ class TwilioWhatsApp {
             ]);
         }
 
-        return $this->twilioService->messages->create($to, $params);
+        return $this->twilioService->messages->create('whatsapp:' . $to, $params);
     }
 
 
