@@ -27,13 +27,13 @@ class TwilioWhatsApp {
      * Send an WhatsApp message using the Twilio Service.
      *
      * @param WhatsAppMessage $message
-     * @param string|null $to
+     * @param string $to
      *
      * @return MessageInstance
      * @throws CouldNotSendNotification
      * @throws TwilioException
      */
-    protected function sendMessage(WhatsAppMessage $message, ?string $to): MessageInstance {
+    public function sendMessage(WhatsAppMessage $message, string $to): MessageInstance {
         $params = [
             'body' => trim($message->content),
         ];
