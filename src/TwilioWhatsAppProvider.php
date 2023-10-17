@@ -19,7 +19,7 @@ class TwilioWhatsAppProvider extends ServiceProvider implements DeferrableProvid
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/twilio-whatsapp-notification.php' => $this->app->configPath('twilio-whatsapp-notification.php'),
-            ]);
+            ], 'config');
         }
     }
 
