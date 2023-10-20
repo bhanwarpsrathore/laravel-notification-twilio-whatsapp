@@ -1,3 +1,10 @@
+# composer
 /vendor/
 composer.lock
+
+# Mac DS_Store Files
 .DS_Store
+
+# phpunit
+phpunit.xml
+.phpunit.result.cache
