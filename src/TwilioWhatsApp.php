@@ -47,7 +47,8 @@ class TwilioWhatsApp {
         }
 
         $this->fillOptionalParams($params, $message, [
-            'statusCallback'
+            'statusCallback',
+            'statusCallbackMethod'
         ]);
 
         if ($message instanceof WhatsAppMedia) {

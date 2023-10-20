@@ -90,4 +90,16 @@ class WhatsAppMessage {
 
         return $this;
     }
+
+    /**
+     * Set the status callback request method.
+     *
+     * @param string $statusCallbackMethod
+     * @return $this
+     */
+    public function statusCallbackMethod(string $statusCallbackMethod): self {
+        $this->statusCallbackMethod = $statusCallbackMethod;
+
+        return $this;
+    }
 }
